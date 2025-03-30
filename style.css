@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body{
+    background-color: #cfcdcd;
+}
+
+#canvas{
+    background-color: #151515;
+}
+
+header{
+    /*background-color: hsl(208, 62%, 56%);*/
+    background-color: #304c89;
+    height: 3rem;
+
+}
+
+footer {
+    background-color: #9eb7e5;
+    height: 2rem;
+    justify-content: center;
+    padding: 0.5rem;
+}
