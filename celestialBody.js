@@ -11,11 +11,14 @@ class CelestialBody{
 
         this.draw(ctx, color);
 
-        this.orbitRadius = Math.sqrt((this.x - centerX) ** 2 + (this.y - centerY) ** 2);
+        console.log(this.x, this.y);
+
+        this.orbitRadius = Math.sqrt((this.x) ** 2 + (this.y ) ** 2);
     }
 
     draw(ctx){
         ctx.beginPath();
+        ctx.lineWidth = 2;
         ctx.fillStyle=this.color;
         ctx.arc(this.x,this.y, this.radius, 0, 2*Math.PI);
         ctx.fill();
@@ -24,24 +27,14 @@ class CelestialBody{
         
     }
 
-    /*update(){
-        this.angle *= Math.PI/100;
-        this.angle += this.velocity;
-        if (this.angle >= 360){
-            this.angle = 0;
-        }
-        this.x += this.velocity * Math.cos(this.angle);
-        this.y -= this.velocity * Math.sin(this.angle);
-
-        this.draw(ctx);
-    }*/
+    
     update(ctx) {
         // Convert angle to radians
         let radianAngle = this.angle * (Math.PI / 180);
 
         // Update position based on circular orbit
-        this.x = centerX + this.orbitRadius * Math.cos(radianAngle);
-        this.y = centerY + this.orbitRadius * Math.sin(radianAngle);
+        this.x = this.orbitRadius * Math.cos(radianAngle);
+        this.y = this.orbitRadius * Math.sin(radianAngle);
 
         // Update angle (increase for counterclockwise motion)
         this.angle += this.velocity;
